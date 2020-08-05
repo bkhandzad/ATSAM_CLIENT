@@ -12,9 +12,9 @@ namespace ClientCommonLayer
     {
         private static IBFL pBFL;
 
-        public ServerSupplier(IBFL bfl)
+        public ServerSupplier(IBFL BFL)
         {
-            pBFL = bfl;
+            pBFL = BFL;
         }
 
         public static IBFL BFL

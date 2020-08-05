@@ -39,6 +39,9 @@
     <Reference Include="BusinessFacadeLayer">
       <HintPath>..\..\ATSAM_SERVER\BusinessFacadeLayer\bin\Debug\BusinessFacadeLayer.dll</HintPath>
     </Reference>
+    <Reference Include="MessageBox">
+      <HintPath>..\ClientCommonLayer\Reerences\MessageBox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
