@@ -39,7 +39,7 @@ namespace AtsamClient
                 tsslDayOfWeek.Text = pBFL.GetSolarDayOfWeek();
                 this.Text = User.WorkStation;
                 this.tsslTime.Text = pBFL.GetSolarTime(':');
-                //this.BackgroundImage = MAP_PBG_Client.Properties.Resources.BackgroundImage;
+                this.BackgroundImage = pCCL.GetResourceImage("BackgroundImage.jpg");
                 this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
                 this.Visible = tmrTimer.Enabled = true;
             }
