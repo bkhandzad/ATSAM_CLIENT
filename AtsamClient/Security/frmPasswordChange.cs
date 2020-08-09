@@ -7,15 +7,17 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using ClientCommonLayer;
 using Atsam;
+using Macro;
+using Atsam.Server;
+using ClientCommonLayer;
 
 namespace AtsamClient.Security
 {
     public partial class frmPasswordChange : Form
     {
         private CCL pCCL = new CCL();
-        private IBFL pBFL
+        private ABFL pBFL
         {
             get
             {
@@ -86,7 +88,7 @@ namespace AtsamClient.Security
                         int RowIndex = dtDataTable.Rows.IndexOf(drDataRow[0]);
                         dtDataTable.Rows[RowIndex]["UserPassword"] = txtNewPassword.Text.Trim();
                         pBFL.SetDataTable(dtDataTable, "_User");
-                        pBFL.Logging(User.UserCode, (int)SystemTable.stUser, Atsam.Action.aUpdate, User.IP);
+                        pBFL.Logging(User.UserCode, (int)SystemTable.stUser, Macro.Action.aUpdate, User.IP);
                         DialogResult = System.Windows.Forms.DialogResult.OK;
                     }
                 }

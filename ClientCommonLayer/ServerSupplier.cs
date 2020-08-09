@@ -5,19 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Atsam;
+using Atsam.Server;
 
 namespace ClientCommonLayer
 {
     public class ServerSupplier
     {
-        private static IBFL pBFL;
+        private static ABFL pBFL;
 
-        public ServerSupplier(IBFL BFL)
+        public ServerSupplier(ABFL BFL)
         {
             pBFL = BFL;
         }
 
-        public static IBFL BFL
+        public static ABFL BFL
         {
             get
             {

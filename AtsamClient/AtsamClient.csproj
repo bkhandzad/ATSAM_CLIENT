@@ -36,7 +36,8 @@
     <Reference Include="Atsam">
       <HintPath>..\..\ATSAM_SERVER\ATSAM\bin\Debug\Atsam.dll</HintPath>
     </Reference>
-    <Reference Include="BusinessFacadeLayer">
+    <Reference Include="BusinessFacadeLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ATSAM_SERVER\BusinessFacadeLayer\bin\Debug\BusinessFacadeLayer.dll</HintPath>
     </Reference>
     <Reference Include="MessageBox">

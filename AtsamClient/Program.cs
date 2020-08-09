@@ -4,8 +4,8 @@ using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Http;
 
-using Atsam;
-using BusinessFacadeLayer;
+using Atsam.Server;
+using Macro;
 using ClientCommonLayer;
 
 namespace AtsamClient
@@ -22,12 +22,12 @@ namespace AtsamClient
             CA pCA = new CA(strURI);
             CCL pCCL = new CCL();
             //MAPCommonLayer.SA pSA = new MAPCommonLayer.SA(strURI);
-            if (CA.Status == Atsam.ErrorCode.ecNone)
+            if (CA.Status == Macro.ErrorCode.ecNone)
             {
-                RemotingConfiguration.RegisterWellKnownClientType(typeof(IBFL), "http://" + CA.ServerIPAddress + ":" + CA.PortNumber + "/" + strURI + "URI");
+                RemotingConfiguration.RegisterWellKnownClientType(typeof(BusinessFacadeLayer.BFL), "http://" + CA.ServerIPAddress + ":" + CA.PortNumber + "/" + strURI + "URI");
                 try
                 {
-                    BFL pBFL = new BFL();
+                    ABFL pBFL = new BusinessFacadeLayer.BFL();
                     pBFL.InitializeLifetimeService();
                     ServerSupplier serverSupplier = new ServerSupplier(pBFL);
                 }

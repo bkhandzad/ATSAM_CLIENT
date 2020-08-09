@@ -7,9 +7,10 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-
-using ClientCommonLayer;
 using Atsam;
+using Macro;
+using Atsam.Server;
+using ClientCommonLayer;
 
 namespace AtsamClient.Security
 {
@@ -30,7 +31,7 @@ namespace AtsamClient.Security
         }
 
         private CCL pCCL = new CCL();
-        private IBFL pBFL
+        private ABFL pBFL
         {
             get
             {
@@ -86,7 +87,7 @@ namespace AtsamClient.Security
                     System.Windows.Forms.MessageBox.Show(eException.Message);
                     this.Close();
                 }
-                pBFL.Logging(User.UserCode, (int)SystemTable.stPermission, Atsam.Action.aCascadeUpdate, User.IP);
+                pBFL.Logging(User.UserCode, (int)SystemTable.stPermission, Macro.Action.aCascadeUpdate, User.IP);
             }
             DialogResult = System.Windows.Forms.DialogResult.OK;
         }
@@ -152,30 +153,30 @@ namespace AtsamClient.Security
             tp.blnSelect = false;
             for (int RowIndex = 0; (RowIndex < drDataRow.Length); RowIndex++)
             {
-                switch ((Atsam.Action)Convert.ToInt16(drDataRow[RowIndex]["pk_FKActionCode"].ToString()))
+                switch ((Macro.Action)Convert.ToInt16(drDataRow[RowIndex]["pk_FKActionCode"].ToString()))
                 {
-                    case Atsam.Action.aInsert:
+                    case Macro.Action.aInsert:
                         tp.blnInsert = true;
                         break;
-                    case Atsam.Action.aUpdate:
+                    case Macro.Action.aUpdate:
                         tp.blnEdit = true;
                         break;
-                    case Atsam.Action.aDelete:
+                    case Macro.Action.aDelete:
                         tp.blnDelete = true;
                         break;
-                    case Atsam.Action.aFind:
+                    case Macro.Action.aFind:
                         tp.blnFind = true;
                         break;
-                    case Atsam.Action.aFilter:
+                    case Macro.Action.aFilter:
                         tp.blnFilter = true;
                         break;
-                    case Atsam.Action.aPrintPreview:
+                    case Macro.Action.aPrintPreview:
                         tp.blnPrintPreview = true;
                         break;
-                    case Atsam.Action.aPrint:
+                    case Macro.Action.aPrint:
                         tp.blnPrint = true;
                         break;
-                    case Atsam.Action.aSelect:
+                    case Macro.Action.aSelect:
                         tp.blnSelect = true;
                         break;
                 }
@@ -255,7 +256,7 @@ namespace AtsamClient.Security
                     drPermission = dtPermission.NewRow();
                     drPermission["pk_FKTableCode"] = tp.intTableCode;
                     drPermission["pk_FKWorkGroupCode"] = intWorkGroupCode;
-                    drPermission["pk_FKActionCode"] = Atsam.Action.aSelect;
+                    drPermission["pk_FKActionCode"] = Macro.Action.aSelect;
                     dtPermission.Rows.Add(drPermission);
                 }
                 if (tp.blnInsert == true)
@@ -263,7 +264,7 @@ namespace AtsamClient.Security
                     drPermission = dtPermission.NewRow();
                     drPermission["pk_FKTableCode"] = tp.intTableCode;
                     drPermission["pk_FKWorkGroupCode"] = intWorkGroupCode;
-                    drPermission["pk_FKActionCode"] = Atsam.Action.aInsert;
+                    drPermission["pk_FKActionCode"] = Macro.Action.aInsert;
                     dtPermission.Rows.Add(drPermission);
                 }
                 if (tp.blnEdit == true)
@@ -271,7 +272,7 @@ namespace AtsamClient.Security
                     drPermission = dtPermission.NewRow();
                     drPermission["pk_FKTableCode"] = tp.intTableCode;
                     drPermission["pk_FKWorkGroupCode"] = intWorkGroupCode;
-                    drPermission["pk_FKActionCode"] = Atsam.Action.aUpdate;
+                    drPermission["pk_FKActionCode"] = Macro.Action.aUpdate;
                     dtPermission.Rows.Add(drPermission);
                 }
                 if (tp.blnDelete == true)
@@ -279,7 +280,7 @@ namespace AtsamClient.Security
                     drPermission = dtPermission.NewRow();
                     drPermission["pk_FKTableCode"] = tp.intTableCode;
                     drPermission["pk_FKWorkGroupCode"] = intWorkGroupCode;
-                    drPermission["pk_FKActionCode"] = Atsam.Action.aDelete;
+                    drPermission["pk_FKActionCode"] = Macro.Action.aDelete;
                     dtPermission.Rows.Add(drPermission);
                 }
                 if (tp.blnFind == true)
@@ -287,7 +288,7 @@ namespace AtsamClient.Security
                     drPermission = dtPermission.NewRow();
                     drPermission["pk_FKTableCode"] = tp.intTableCode;
                     drPermission["pk_FKWorkGroupCode"] = intWorkGroupCode;
-                    drPermission["pk_FKActionCode"] = Atsam.Action.aFind;
+                    drPermission["pk_FKActionCode"] = Macro.Action.aFind;
                     dtPermission.Rows.Add(drPermission);
                 }
                 if (tp.blnFilter == true)
@@ -295,7 +296,7 @@ namespace AtsamClient.Security
                     drPermission = dtPermission.NewRow();
                     drPermission["pk_FKTableCode"] = tp.intTableCode;
                     drPermission["pk_FKWorkGroupCode"] = intWorkGroupCode;
-                    drPermission["pk_FKActionCode"] = Atsam.Action.aFilter;
+                    drPermission["pk_FKActionCode"] = Macro.Action.aFilter;
                     dtPermission.Rows.Add(drPermission);
                 }
                 if (tp.blnPrintPreview == true)
@@ -303,7 +304,7 @@ namespace AtsamClient.Security
                     drPermission = dtPermission.NewRow();
                     drPermission["pk_FKTableCode"] = tp.intTableCode;
                     drPermission["pk_FKWorkGroupCode"] = intWorkGroupCode;
-                    drPermission["pk_FKActionCode"] = Atsam.Action.aPrintPreview;
+                    drPermission["pk_FKActionCode"] = Macro.Action.aPrintPreview;
                     dtPermission.Rows.Add(drPermission);
                 }
                 if (tp.blnPrint == true)
@@ -311,7 +312,7 @@ namespace AtsamClient.Security
                     drPermission = dtPermission.NewRow();
                     drPermission["pk_FKTableCode"] = tp.intTableCode;
                     drPermission["pk_FKWorkGroupCode"] = intWorkGroupCode;
-                    drPermission["pk_FKActionCode"] = Atsam.Action.aPrint;
+                    drPermission["pk_FKActionCode"] = Macro.Action.aPrint;
                     dtPermission.Rows.Add(drPermission);
                 }
             }

@@ -1,4 +1,6 @@
 ﻿using Atsam;
+using Macro;
+using Atsam.Server;
 using System;
 using System.Data;
 using System.Drawing;
@@ -160,23 +162,23 @@ namespace ClientCommonLayer
                             if (tsbToolStripButton is ToolStripButton)
                                 switch (tsbToolStripButton.Name)
                                 {
-                                    case "tsbDBInsert": tsbToolStripButton.Enabled = __Table.getPermission(Atsam.Action.aInsert); break;
-                                    case "tsbDBEdit": tsbToolStripButton.Enabled = __Table.getPermission(Atsam.Action.aUpdate); break;
-                                    case "tsbDBDelete": tsbToolStripButton.Enabled = __Table.getPermission(Atsam.Action.aDelete); break;
+                                    case "tsbDBInsert": tsbToolStripButton.Enabled = __Table.getPermission(Macro.Action.aInsert); break;
+                                    case "tsbDBEdit": tsbToolStripButton.Enabled = __Table.getPermission(Macro.Action.aUpdate); break;
+                                    case "tsbDBDelete": tsbToolStripButton.Enabled = __Table.getPermission(Macro.Action.aDelete); break;
                                     case "tsbDBPost": tsbToolStripButton.Enabled = false; break;
                                     case "tsbDBCancel": tsbToolStripButton.Enabled = false; break;
-                                    case "tsbDBFind": tsbToolStripButton.Enabled = __Table.getPermission(Atsam.Action.aFind); break;
-                                    case "tsbDBFindNext": tsbToolStripButton.Enabled = __Table.getPermission(Atsam.Action.aFind); break;
-                                    case "tsbDBFilter": tsbToolStripButton.Enabled = __Table.getPermission(Atsam.Action.aFilter); break;
-                                    case "tsbPrintPreview": tsbToolStripButton.Enabled = __Table.getPermission(Atsam.Action.aPrintPreview); break;
-                                    case "tsbDataPrint": tsbToolStripButton.Enabled = __Table.getPermission(Atsam.Action.aPrint); break;
+                                    case "tsbDBFind": tsbToolStripButton.Enabled = __Table.getPermission(Macro.Action.aFind); break;
+                                    case "tsbDBFindNext": tsbToolStripButton.Enabled = __Table.getPermission(Macro.Action.aFind); break;
+                                    case "tsbDBFilter": tsbToolStripButton.Enabled = __Table.getPermission(Macro.Action.aFilter); break;
+                                    case "tsbPrintPreview": tsbToolStripButton.Enabled = __Table.getPermission(Macro.Action.aPrintPreview); break;
+                                    case "tsbDataPrint": tsbToolStripButton.Enabled = __Table.getPermission(Macro.Action.aPrint); break;
                                     case "tsbPDA": tsbToolStripButton.Enabled = true; break;
                                     default:
                                         {
                                             if (tsbToolStripButton.Tag == null)
                                                 tsbToolStripButton.Enabled = true;
                                             else
-                                                tsbToolStripButton.Enabled = ((_Table)tsbToolStripButton.Tag).getPermission(Atsam.Action.aSelect);
+                                                tsbToolStripButton.Enabled = ((_Table)tsbToolStripButton.Tag).getPermission(Macro.Action.aSelect);
                                             break;
                                         }
                                 }
@@ -184,7 +186,7 @@ namespace ClientCommonLayer
                             {
                                 tsbToolStripButton.Enabled = true;
                                 foreach (ToolStripItem tsiToolStripItem in (tsbToolStripButton as ToolStripDropDownButton).DropDownItems)
-                                    tsiToolStripItem.Enabled = ((_Table)tsiToolStripItem.Tag).getPermission(Atsam.Action.aSelect);
+                                    tsiToolStripItem.Enabled = ((_Table)tsiToolStripItem.Tag).getPermission(Macro.Action.aSelect);
                             }
                         }
                         break;
@@ -197,7 +199,7 @@ namespace ClientCommonLayer
                                 switch (tsbToolStripButton.Name)
                                 {
                                     case "tsbPDA": tsbToolStripButton.Enabled = true; break;
-                                    case "tsbDBInsert": tsbToolStripButton.Enabled = __Table.getPermission(Atsam.Action.aInsert); break;
+                                    case "tsbDBInsert": tsbToolStripButton.Enabled = __Table.getPermission(Macro.Action.aInsert); break;
                                     case "tsbDBFilter":
                                     case "tsbDBFind":
                                     case "tsbCalendar":
@@ -244,22 +246,22 @@ namespace ClientCommonLayer
                     }
                 case TableStatus.tsBrowse:
                     {
-                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBInsert"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBInsert"].Enabled = __Table.getPermission(Atsam.Action.aInsert);
-                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBEdit"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBEdit"].Enabled = __Table.getPermission(Atsam.Action.aUpdate);
-                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBDelete"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBDelete"].Enabled = __Table.getPermission(Atsam.Action.aDelete);
+                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBInsert"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBInsert"].Enabled = __Table.getPermission(Macro.Action.aInsert);
+                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBEdit"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBEdit"].Enabled = __Table.getPermission(Macro.Action.aUpdate);
+                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBDelete"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBDelete"].Enabled = __Table.getPermission(Macro.Action.aDelete);
                         if (tsmiToolStripMenuItem.DropDownItems["tsmiDBPost"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBPost"].Enabled = false;
                         if (tsmiToolStripMenuItem.DropDownItems["tsmiDBCancel"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBCancel"].Enabled = false;
-                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBFind"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBFind"].Enabled = __Table.getPermission(Atsam.Action.aFind);
-                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBFindNext"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBFindNext"].Enabled = __Table.getPermission(Atsam.Action.aFind);
-                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBFilter"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBFilter"].Enabled = __Table.getPermission(Atsam.Action.aFilter);
-                        if (tsmiToolStripMenuItem.DropDownItems["tsmiPrintPreview"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiPrintPreview"].Enabled = __Table.getPermission(Atsam.Action.aPrintPreview);
-                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDataPrint"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDataPrint"].Enabled = __Table.getPermission(Atsam.Action.aPrint);
+                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBFind"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBFind"].Enabled = __Table.getPermission(Macro.Action.aFind);
+                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBFindNext"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBFindNext"].Enabled = __Table.getPermission(Macro.Action.aFind);
+                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBFilter"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBFilter"].Enabled = __Table.getPermission(Macro.Action.aFilter);
+                        if (tsmiToolStripMenuItem.DropDownItems["tsmiPrintPreview"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiPrintPreview"].Enabled = __Table.getPermission(Macro.Action.aPrintPreview);
+                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDataPrint"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDataPrint"].Enabled = __Table.getPermission(Macro.Action.aPrint);
                         if (tsmiToolStripMenuItem.DropDownItems["tsmiClose"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiClose"].Enabled = true;
                         break;
                     }
                 case TableStatus.tsEmpty:
                     {
-                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBInsert"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBInsert"].Enabled = __Table.getPermission(Atsam.Action.aInsert);
+                        if (tsmiToolStripMenuItem.DropDownItems["tsmiDBInsert"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBInsert"].Enabled = __Table.getPermission(Macro.Action.aInsert);
                         if (tsmiToolStripMenuItem.DropDownItems["tsmiDBEdit"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBEdit"].Enabled = false;
                         if (tsmiToolStripMenuItem.DropDownItems["tsmiDBDelete"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBDelete"].Enabled = false;
                         if (tsmiToolStripMenuItem.DropDownItems["tsmiDBPost"] != null) tsmiToolStripMenuItem.DropDownItems["tsmiDBPost"].Enabled = false;
@@ -337,7 +339,7 @@ namespace ClientCommonLayer
                     else
                     {
                         _Table __Table = (_Table)cControl.Tag;
-                        cControl.Enabled = __Table.getPermission(Atsam.Action.aSelect) && EnabledStatus;
+                        cControl.Enabled = __Table.getPermission(Macro.Action.aSelect) && EnabledStatus;
                     }
                 }
                 else if (cControl is CheckBox)
@@ -637,7 +639,7 @@ namespace ClientCommonLayer
                     else
                     {
                         dtDataTable.AcceptChanges();
-                        ServerSupplier.BFL.Logging(User.UserCode, __Table.PK_TableCode, Atsam.Action.aDelete, User.IP);
+                        ServerSupplier.BFL.Logging(User.UserCode, __Table.PK_TableCode, Macro.Action.aDelete, User.IP);
                     }
                 }
             }
@@ -667,7 +669,7 @@ namespace ClientCommonLayer
                     else
                     {
                         dtDataTable.AcceptChanges();
-                        ServerSupplier.BFL.Logging(User.UserCode, __Table.PK_TableCode, Atsam.Action.aDelete, User.IP);
+                        ServerSupplier.BFL.Logging(User.UserCode, __Table.PK_TableCode, Macro.Action.aDelete, User.IP);
                     }
                 }
             }

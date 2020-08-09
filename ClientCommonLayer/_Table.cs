@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Windows.Forms;
 
 using Atsam;
+using Macro;
 
 namespace ClientCommonLayer
 {

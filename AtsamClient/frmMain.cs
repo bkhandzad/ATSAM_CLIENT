@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 
 using Atsam;
+using Macro;
+using Atsam.Server;
 using ClientCommonLayer;
 using AtsamClient.Security;
 
@@ -12,7 +14,7 @@ namespace AtsamClient
     public partial class frmMain : Form
     {
         private CCL pCCL = new CCL();
-        private IBFL pBFL
+        private ABFL pBFL
         {
             get
             {
@@ -49,7 +51,7 @@ namespace AtsamClient
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            pBFL.Logging(User.UserCode, User.WorkStationCode, Atsam.Action.aLogOut, User.IP);
+            pBFL.Logging(User.UserCode, User.WorkStationCode, Macro.Action.aLogOut, User.IP);
         }
 
         private void tmrTimer_Tick(object sender, EventArgs e)
@@ -157,7 +159,7 @@ namespace AtsamClient
                 _Table __Table = new _Table(drDataRow[RootIndex]);
                 if (tsmiToolStripItem == null)
                 {
-                    if (__Table.getPermission(Atsam.Action.aSelect) == true)
+                    if (__Table.getPermission(Macro.Action.aSelect) == true)
                     {
                         tsmi = (ToolStripMenuItem)msMenuStrip.Items.Add(drDataRow[RootIndex]["Description"].ToString(), null, tsmiToolStripMenuItem_Click);
                         tsmi.Tag = __Table;
@@ -170,7 +172,7 @@ namespace AtsamClient
                         IsVisibleSeperator = true;
                 }
                 else
-                        if (__Table.getPermission(Atsam.Action.aSelect) == true)
+                        if (__Table.getPermission(Macro.Action.aSelect) == true)
                 {
                     if (IsVisibleSeperator == true)
                     {

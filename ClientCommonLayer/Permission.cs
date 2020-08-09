@@ -24,7 +24,7 @@ namespace ClientCommonLayer
 
         public override Boolean[] GetPermission(int intWorkGroupCode, int intTableCode)
         {
-            Boolean[] Permission = new Boolean[System.Enum.GetValues(typeof(Atsam.Action)).Length];
+            Boolean[] Permission = new Boolean[System.Enum.GetValues(typeof(Macro.Action)).Length];
             switch (intWorkGroupCode)
             {
                 case -1: break;

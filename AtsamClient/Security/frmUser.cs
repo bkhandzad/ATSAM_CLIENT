@@ -7,15 +7,17 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-using ClientCommonLayer;
 using Atsam;
+using Macro;
+using Atsam.Server;
+using ClientCommonLayer;
 
 namespace AtsamClient.Security
 {
     public partial class frmUser : Form
     {
         private CCL pCCL = new CCL();
-        private IBFL pBFL
+        private ABFL pBFL
         {
             get
             {
@@ -359,12 +361,12 @@ namespace AtsamClient.Security
                             cmCurrencyManager.Position = NewRowIndex;
                         if (__Table.TableStatus == TableStatus.tsInsert)
                         {
-                            pBFL.Logging(User.UserCode, __Table.PK_TableCode, Atsam.Action.aInsert, User.IP);
+                            pBFL.Logging(User.UserCode, __Table.PK_TableCode, Macro.Action.aInsert, User.IP);
                             pCCL.SetGroupBox(gbDetails, true, true);
                             tbFirstName.Focus();
                         }
                         else
-                            pBFL.Logging(User.UserCode, __Table.PK_TableCode, Atsam.Action.aUpdate, User.IP);
+                            pBFL.Logging(User.UserCode, __Table.PK_TableCode, Macro.Action.aUpdate, User.IP);
                     }
                     else
                     {

@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 
 using Atsam;
+using Macro;
 
 namespace ClientCommonLayer
 {

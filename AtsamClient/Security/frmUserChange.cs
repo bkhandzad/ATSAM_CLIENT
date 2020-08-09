@@ -1,14 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-using ClientCommonLayer;
 using Atsam;
+using Macro;
+using Atsam.Server;
+using ClientCommonLayer;
 
 namespace AtsamClient.Security
 {
@@ -30,7 +27,7 @@ namespace AtsamClient.Security
             User u = new User(txtUserID.Text.Trim(), txtUserPassword.Text.Trim());
             switch (User.Status)
             {
-                case Atsam.ErrorCode.ecNone:
+                case Macro.ErrorCode.ecNone:
                     {
                         DialogResult = System.Windows.Forms.DialogResult.OK;
                         break;

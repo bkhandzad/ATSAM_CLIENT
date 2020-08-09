@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Atsam;
+using Macro;
 
 namespace ClientCommonLayer
 {
