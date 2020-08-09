@@ -196,10 +196,10 @@
             this.llWebsite.AutoSize = true;
             this.llWebsite.Location = new System.Drawing.Point(112, 67);
             this.llWebsite.Name = "llWebsite";
-            this.llWebsite.Size = new System.Drawing.Size(150, 16);
+            this.llWebsite.Size = new System.Drawing.Size(120, 16);
             this.llWebsite.TabIndex = 15;
             this.llWebsite.TabStop = true;
-            this.llWebsite.Text = "www.MabaniPardaz.com";
+            this.llWebsite.Text = "http://behsarsam.ir";
             this.llWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llWebsite_LinkClicked);
             // 
             // lblDBValue
@@ -228,7 +228,6 @@
             // 
             this.pbMAP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbMAP.ErrorImage = null;
-            //this.pbMAP.Image = global::MAP_PBG_Client.Properties.Resources.MAP;
             this.pbMAP.Location = new System.Drawing.Point(6, 22);
             this.pbMAP.Name = "pbMAP";
             this.pbMAP.Size = new System.Drawing.Size(68, 61);
@@ -293,9 +292,9 @@
             this.lblMAP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblMAP.Location = new System.Drawing.Point(112, 31);
             this.lblMAP.Name = "lblMAP";
-            this.lblMAP.Size = new System.Drawing.Size(151, 32);
+            this.lblMAP.Size = new System.Drawing.Size(124, 32);
             this.lblMAP.TabIndex = 7;
-            this.lblMAP.Text = "شرکت نو آوران مبانی پرداز\r\nتلفن و نمابر: 88610668،9";
+            this.lblMAP.Text = "بهزاد خندزاد\r\nتلفن : 09126997489";
             // 
             // gbButton
             // 
@@ -347,7 +346,6 @@
             // 
             this.pbCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbCompany.ErrorImage = null;
-            //this.pbCompany.Image = global::MAP_PBG_Client.Properties.Resources.PBG;
             this.pbCompany.InitialImage = null;
             this.pbCompany.Location = new System.Drawing.Point(235, 14);
             this.pbCompany.Name = "pbCompany";
@@ -363,7 +361,6 @@
             this.lblCaption.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblCaption.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblCaption.ForeColor = System.Drawing.Color.Black;
-            //this.lblCaption.Image = global::MAP_PBG_Client.Properties.Resources.Banner1;
             this.lblCaption.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblCaption.Location = new System.Drawing.Point(3, 3);
             this.lblCaption.Name = "lblCaption";

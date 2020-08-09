@@ -9,6 +9,7 @@ namespace ClientCommonLayer
     {
         public User(string strUserID, string strPassword)
         {
+            pPermission = new Permission();
             _IP = GetLocalIP();
             if ((strUserID == _UserID) && (strPassword == _Password))
             {

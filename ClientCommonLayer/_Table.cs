@@ -12,11 +12,12 @@ namespace ClientCommonLayer
     {
         public _Table(DataRow drDataRow, FormStatus fsFormStatus = FormStatus.fsMain) : base(drDataRow, fsFormStatus)
         {
+            Permission = User._Permission.GetPermission(User.WorkGroupCode, PK_TableCode);
         }
 
         public override void SetField()
         {
-            if (!this._Field.Active)
+            if (this._Field == null || this._Field.Active == false)
             {
                 DataTable _DataTable = new DataTable();
                 if (ServerSupplier.BFL.GetDataTable(ref _DataTable, "_Field", "pk_FKTableCode = " + FK_FieldsTableCode) == null)
