@@ -40,7 +40,7 @@ namespace AtsamClient
                 this.Text = User.WorkStation;
                 this.tsslTime.Text = pBFL.GetSolarTime(':');
                 this.BackgroundImage = pCCL.GetResourceImage("BackgroundImage.jpg");
-                this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
+                this.tmrTimer.Tick += new EventHandler(this.tmrTimer_Tick);
                 this.Visible = tmrTimer.Enabled = true;
             }
             else
@@ -150,7 +150,7 @@ namespace AtsamClient
 
         private void CreateMenuStrip(MenuStrip msMenuStrip, ToolStripMenuItem tsmiToolStripItem, DataTable dtDataTable, int intTableCode, Boolean HasSubMenu)
         {
-            DataRow[] drDataRow = dtDataTable.Select("Visible = 1 AND FK_ParentTableCode = " + intTableCode.ToString() + " AND (FK_TableTypeCode NOT IN (" + Convert.ToInt16(TableType.ttRelation).ToString() + ", " + Convert.ToInt16(TableType.ttSubTable).ToString() + ", " + Convert.ToInt16(TableType.ttButton).ToString() + "))", "Rank ASC");
+            DataRow[] drDataRow = dtDataTable.Select("Visible = 1 AND PK_TableCode <> " + intTableCode.ToString() + " AND FK_ParentTableCode = " + intTableCode.ToString() + " AND (FK_TableTypeCode NOT IN (" + Convert.ToInt16(TableType.ttRelation).ToString() + ", " + Convert.ToInt16(TableType.ttSubTable).ToString() + ", " + Convert.ToInt16(TableType.ttButton).ToString() + "))", "Rank ASC");
             ToolStripMenuItem tsmi = null;
             Boolean IsVisibleSeperator = false;
 
