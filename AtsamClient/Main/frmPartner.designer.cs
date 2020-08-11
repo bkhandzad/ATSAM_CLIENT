@@ -599,6 +599,7 @@
             this.tsmiDBInsert.ShortcutKeys = System.Windows.Forms.Keys.Insert;
             this.tsmiDBInsert.Size = new System.Drawing.Size(157, 22);
             this.tsmiDBInsert.Text = "جدید";
+            this.tsmiDBInsert.Click += new System.EventHandler(this.tsbDBInsert_Click);
             // 
             // tsmiDBEdit
             // 
@@ -608,6 +609,7 @@
             this.tsmiDBEdit.ShortcutKeyDisplayString = "";
             this.tsmiDBEdit.Size = new System.Drawing.Size(157, 22);
             this.tsmiDBEdit.Text = "ویرایش";
+            this.tsmiDBEdit.Click += new System.EventHandler(this.tsbDBInsert_Click);
             // 
             // tsmiDBDelete
             // 
@@ -617,6 +619,7 @@
             this.tsmiDBDelete.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
             this.tsmiDBDelete.Size = new System.Drawing.Size(157, 22);
             this.tsmiDBDelete.Text = "حذف";
+            this.tsmiDBDelete.Click += new System.EventHandler(this.tsbDBDelete_Click);
             // 
             // tssSeparator1
             // 
@@ -631,6 +634,7 @@
             this.tsmiDBPost.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.tsmiDBPost.Size = new System.Drawing.Size(157, 22);
             this.tsmiDBPost.Text = "ثبت";
+            this.tsmiDBPost.Click += new System.EventHandler(this.tsbDBPost_Click);
             // 
             // tsmiDBCancel
             // 
@@ -639,6 +643,7 @@
             this.tsmiDBCancel.Name = "tsmiDBCancel";
             this.tsmiDBCancel.Size = new System.Drawing.Size(157, 22);
             this.tsmiDBCancel.Text = "انصراف";
+            this.tsmiDBCancel.Click += new System.EventHandler(this.tsbDBCancel_Click);
             // 
             // tsmiPrint
             // 

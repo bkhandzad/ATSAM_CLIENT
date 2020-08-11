@@ -306,6 +306,8 @@ namespace AtsamClient.Main
                         {
                             pBFL.Logging(User.UserCode, __Table.PK_TableCode, Macro.Action.aInsert, User.IP);
                             pCCL.SetGroupBox(gbDetails, true, true);
+                            tbPK_PartnerCode.Text = pBFL.GetPartnerCode(ptPartnerType).ToString();
+                            tbPartner.Focus();
                         }
                         else
                             pBFL.Logging(User.UserCode, __Table.PK_TableCode, Macro.Action.aUpdate, User.IP);
@@ -358,9 +360,9 @@ namespace AtsamClient.Main
 
         private void tsbPrintPreview_Click(object sender, EventArgs e)
         {
-            frmReport frm = new frmReport();
+            //frmReport frm = new frmReport();
             //frm.Url = "/MAP_SNC_PTW/Rpt_Customers";
-            frm.ShowDialog();
+            //frm.ShowDialog();
         }
     }
 }

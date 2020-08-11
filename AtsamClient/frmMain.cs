@@ -25,8 +25,60 @@ namespace AtsamClient
         public frmMain()
         {
             InitializeComponent();
+            string a = GenerateInvoiceCode(InvoiceState.isUsual, InvoiceType.itSell);
+            a = GenerateInvoiceCode(InvoiceState.isReturn, InvoiceType.itPurchase);
         }
 
+        public String GenerateInvoiceCode(InvoiceState isInvoiceState, InvoiceType itInvoiceType)
+        {
+            try
+            {
+                string strNNNN = GetInvoiceCode(isInvoiceState, itInvoiceType);
+                if (strNNNN == string.Empty)
+                    return (string.Empty);
+                string strRRR = ((int)itInvoiceType).ToString() + ((int)isInvoiceState).ToString().PadLeft(2, '0');
+                string strYY = pBFL.GetSolarDate().Trim().Substring(2, 2).Trim();
+                string strDDD = pBFL.GetSolarDayOfYear().ToString().PadLeft(3, '0');
+                String strInvoiceCode = strYY + strDDD + strRRR + strNNNN;
+                return strInvoiceCode;
+            }
+            catch
+            {
+                return (String.Empty);
+            }
+        }
+
+        private string GetInvoiceCode(InvoiceState isInvoiceState, InvoiceType itInvoiceType)
+        {
+            try
+            {
+                string search = "SELECT ISNULL(CAST(MAX(SUBSTRING(InvoiceCode, 9, 4)) AS Int),0) + 1 InvoiceID FROM m_Invoice WHERE SolarDate = '" + pBFL.GetSolarDate('/') + "' AND FK_InvoiceTypeCode = " + (int)itInvoiceType + "AND FK_InvoiceStateCode = " + (int)isInvoiceState;
+                return (ExecuteScalar(search).ToString().PadLeft(4, '0'));
+            }
+            catch
+            {
+                return (String.Empty);
+            }
+        }
+
+        public object ExecuteScalar(string strSQL)
+        {
+            SqlConnection cConnection = new SqlConnection("Password=zaza@121;Persist Security Info=True;User ID=sa;Initial Catalog=ATSAM;Data Source=localhost\\SQLEXPRESS");
+            try
+            {
+                cConnection.Open();
+                SqlCommand cCommand = new SqlCommand(strSQL, cConnection);
+                return (cCommand.ExecuteScalar());
+            }
+            catch (SqlException eSqlException)
+            {
+                return (eSqlException);
+            }
+            finally
+            {
+                cConnection.Close();
+            }
+        }
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -106,6 +158,7 @@ namespace AtsamClient
                         if ((TableType)__Table.FK_TableTypeCode == TableType.ttReport)
                         {
                             frmReport frm = new frmReport(__Table.LinkPage);
+                            frm.Tag = tsmi.Tag;
                             frm.ShowDialog();
                         }
                         else if (__Table.LinkPage.Trim() != string.Empty)

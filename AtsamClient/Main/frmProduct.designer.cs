@@ -35,15 +35,15 @@
             this.tbProduct = new System.Windows.Forms.TextBox();
             this.lblProduct = new System.Windows.Forms.Label();
             this.ntbPK_ProductCode = new NumericTextBox();
-            this.btnb_YarnType = new System.Windows.Forms.Button();
-            this.cbFK_YarnTypeCode = new System.Windows.Forms.ComboBox();
-            this.ntbFK_YarnTypeCode = new NumericTextBox();
-            this.lblFK_YarnTypeCode = new System.Windows.Forms.Label();
+            this.btnb_ProductType = new System.Windows.Forms.Button();
+            this.cbFK_ProductTypeCode = new System.Windows.Forms.ComboBox();
+            this.ntbFK_ProductTypeCode = new NumericTextBox();
+            this.lblFK_ProductTypeCode = new System.Windows.Forms.Label();
             this.lblPK_ProductCode = new System.Windows.Forms.Label();
-            this.btnb_YarnKind = new System.Windows.Forms.Button();
-            this.cbFK_YarnKindCode = new System.Windows.Forms.ComboBox();
-            this.ntbFK_YarnKindCode = new NumericTextBox();
-            this.lblFK_YarnKindCode = new System.Windows.Forms.Label();
+            this.btnb_Fabric = new System.Windows.Forms.Button();
+            this.cbFK_FabricCode = new System.Windows.Forms.ComboBox();
+            this.ntbFK_FabricCode = new NumericTextBox();
+            this.lblFK_FabricCode = new System.Windows.Forms.Label();
             this.ssStatusStrip = new System.Windows.Forms.StatusStrip();
             this.tsslUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslTableStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -88,15 +88,15 @@
             this.gbDetails.Controls.Add(this.tbProduct);
             this.gbDetails.Controls.Add(this.lblProduct);
             this.gbDetails.Controls.Add(this.ntbPK_ProductCode);
-            this.gbDetails.Controls.Add(this.btnb_YarnType);
-            this.gbDetails.Controls.Add(this.cbFK_YarnTypeCode);
-            this.gbDetails.Controls.Add(this.ntbFK_YarnTypeCode);
-            this.gbDetails.Controls.Add(this.lblFK_YarnTypeCode);
+            this.gbDetails.Controls.Add(this.btnb_ProductType);
+            this.gbDetails.Controls.Add(this.cbFK_ProductTypeCode);
+            this.gbDetails.Controls.Add(this.ntbFK_ProductTypeCode);
+            this.gbDetails.Controls.Add(this.lblFK_ProductTypeCode);
             this.gbDetails.Controls.Add(this.lblPK_ProductCode);
-            this.gbDetails.Controls.Add(this.btnb_YarnKind);
-            this.gbDetails.Controls.Add(this.cbFK_YarnKindCode);
-            this.gbDetails.Controls.Add(this.ntbFK_YarnKindCode);
-            this.gbDetails.Controls.Add(this.lblFK_YarnKindCode);
+            this.gbDetails.Controls.Add(this.btnb_Fabric);
+            this.gbDetails.Controls.Add(this.cbFK_FabricCode);
+            this.gbDetails.Controls.Add(this.ntbFK_FabricCode);
+            this.gbDetails.Controls.Add(this.lblFK_FabricCode);
             this.gbDetails.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbDetails.Location = new System.Drawing.Point(0, 103);
             this.gbDetails.Name = "gbDetails";
@@ -149,55 +149,55 @@
             this.ntbPK_ProductCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ntbPK_ProductCode.ValidationChecked = true;
             // 
-            // btnb_YarnType
+            // btnb_ProductType
             // 
-            this.btnb_YarnType.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnb_YarnType.ImageIndex = 0;
-            this.btnb_YarnType.ImageList = this.iImageList;
-            this.btnb_YarnType.Location = new System.Drawing.Point(8, 18);
-            this.btnb_YarnType.Name = "btnb_YarnType";
-            this.btnb_YarnType.Size = new System.Drawing.Size(28, 23);
-            this.btnb_YarnType.TabIndex = 7;
-            this.btnb_YarnType.UseVisualStyleBackColor = true;
+            this.btnb_ProductType.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnb_ProductType.ImageIndex = 0;
+            this.btnb_ProductType.ImageList = this.iImageList;
+            this.btnb_ProductType.Location = new System.Drawing.Point(8, 18);
+            this.btnb_ProductType.Name = "btnb_ProductType";
+            this.btnb_ProductType.Size = new System.Drawing.Size(28, 23);
+            this.btnb_ProductType.TabIndex = 7;
+            this.btnb_ProductType.UseVisualStyleBackColor = true;
             // 
-            // cbFK_YarnTypeCode
+            // cbFK_ProductTypeCode
             // 
-            this.cbFK_YarnTypeCode.BackColor = System.Drawing.Color.White;
-            this.cbFK_YarnTypeCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFK_YarnTypeCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFK_YarnTypeCode.FormattingEnabled = true;
-            this.cbFK_YarnTypeCode.Location = new System.Drawing.Point(37, 18);
-            this.cbFK_YarnTypeCode.Name = "cbFK_YarnTypeCode";
-            this.cbFK_YarnTypeCode.Size = new System.Drawing.Size(144, 24);
-            this.cbFK_YarnTypeCode.TabIndex = 6;
+            this.cbFK_ProductTypeCode.BackColor = System.Drawing.Color.White;
+            this.cbFK_ProductTypeCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFK_ProductTypeCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbFK_ProductTypeCode.FormattingEnabled = true;
+            this.cbFK_ProductTypeCode.Location = new System.Drawing.Point(37, 18);
+            this.cbFK_ProductTypeCode.Name = "cbFK_ProductTypeCode";
+            this.cbFK_ProductTypeCode.Size = new System.Drawing.Size(144, 24);
+            this.cbFK_ProductTypeCode.TabIndex = 6;
             // 
-            // ntbFK_YarnTypeCode
+            // ntbFK_ProductTypeCode
             // 
-            this.ntbFK_YarnTypeCode.AllowDecimalSeparator = false;
-            this.ntbFK_YarnTypeCode.AllowGroupSeparator = false;
-            this.ntbFK_YarnTypeCode.AllowNegativeSign = false;
-            this.ntbFK_YarnTypeCode.AllowSpace = false;
-            this.ntbFK_YarnTypeCode.BackColor = System.Drawing.Color.White;
-            this.ntbFK_YarnTypeCode.DecimalLength = 0;
-            this.ntbFK_YarnTypeCode.Location = new System.Drawing.Point(183, 18);
-            this.ntbFK_YarnTypeCode.Name = "ntbFK_YarnTypeCode";
-            this.ntbFK_YarnTypeCode.Size = new System.Drawing.Size(50, 23);
-            this.ntbFK_YarnTypeCode.TabIndex = 5;
-            this.ntbFK_YarnTypeCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ntbFK_YarnTypeCode.ValidationChecked = true;
+            this.ntbFK_ProductTypeCode.AllowDecimalSeparator = false;
+            this.ntbFK_ProductTypeCode.AllowGroupSeparator = false;
+            this.ntbFK_ProductTypeCode.AllowNegativeSign = false;
+            this.ntbFK_ProductTypeCode.AllowSpace = false;
+            this.ntbFK_ProductTypeCode.BackColor = System.Drawing.Color.White;
+            this.ntbFK_ProductTypeCode.DecimalLength = 0;
+            this.ntbFK_ProductTypeCode.Location = new System.Drawing.Point(183, 18);
+            this.ntbFK_ProductTypeCode.Name = "ntbFK_ProductTypeCode";
+            this.ntbFK_ProductTypeCode.Size = new System.Drawing.Size(50, 23);
+            this.ntbFK_ProductTypeCode.TabIndex = 5;
+            this.ntbFK_ProductTypeCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ntbFK_ProductTypeCode.ValidationChecked = true;
             // 
-            // lblFK_YarnTypeCode
+            // lblFK_ProductTypeCode
             // 
-            this.lblFK_YarnTypeCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblFK_YarnTypeCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFK_YarnTypeCode.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblFK_YarnTypeCode.ForeColor = System.Drawing.Color.Black;
-            this.lblFK_YarnTypeCode.Location = new System.Drawing.Point(236, 18);
-            this.lblFK_YarnTypeCode.Name = "lblFK_YarnTypeCode";
-            this.lblFK_YarnTypeCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblFK_YarnTypeCode.Size = new System.Drawing.Size(130, 23);
-            this.lblFK_YarnTypeCode.TabIndex = 4;
-            this.lblFK_YarnTypeCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFK_ProductTypeCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblFK_ProductTypeCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFK_ProductTypeCode.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblFK_ProductTypeCode.ForeColor = System.Drawing.Color.Black;
+            this.lblFK_ProductTypeCode.Location = new System.Drawing.Point(236, 18);
+            this.lblFK_ProductTypeCode.Name = "lblFK_ProductTypeCode";
+            this.lblFK_ProductTypeCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblFK_ProductTypeCode.Size = new System.Drawing.Size(130, 23);
+            this.lblFK_ProductTypeCode.TabIndex = 4;
+            this.lblFK_ProductTypeCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPK_ProductCode
             // 
@@ -212,55 +212,55 @@
             this.lblPK_ProductCode.TabIndex = 0;
             this.lblPK_ProductCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnb_YarnKind
+            // btnb_Fabric
             // 
-            this.btnb_YarnKind.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnb_YarnKind.ImageIndex = 0;
-            this.btnb_YarnKind.ImageList = this.iImageList;
-            this.btnb_YarnKind.Location = new System.Drawing.Point(8, 53);
-            this.btnb_YarnKind.Name = "btnb_YarnKind";
-            this.btnb_YarnKind.Size = new System.Drawing.Size(28, 23);
-            this.btnb_YarnKind.TabIndex = 11;
-            this.btnb_YarnKind.UseVisualStyleBackColor = true;
+            this.btnb_Fabric.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnb_Fabric.ImageIndex = 0;
+            this.btnb_Fabric.ImageList = this.iImageList;
+            this.btnb_Fabric.Location = new System.Drawing.Point(8, 53);
+            this.btnb_Fabric.Name = "btnb_Fabric";
+            this.btnb_Fabric.Size = new System.Drawing.Size(28, 23);
+            this.btnb_Fabric.TabIndex = 11;
+            this.btnb_Fabric.UseVisualStyleBackColor = true;
             // 
-            // cbFK_YarnKindCode
+            // cbFK_FabricCode
             // 
-            this.cbFK_YarnKindCode.BackColor = System.Drawing.Color.White;
-            this.cbFK_YarnKindCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFK_YarnKindCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFK_YarnKindCode.FormattingEnabled = true;
-            this.cbFK_YarnKindCode.Location = new System.Drawing.Point(37, 53);
-            this.cbFK_YarnKindCode.Name = "cbFK_YarnKindCode";
-            this.cbFK_YarnKindCode.Size = new System.Drawing.Size(144, 24);
-            this.cbFK_YarnKindCode.TabIndex = 10;
+            this.cbFK_FabricCode.BackColor = System.Drawing.Color.White;
+            this.cbFK_FabricCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFK_FabricCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbFK_FabricCode.FormattingEnabled = true;
+            this.cbFK_FabricCode.Location = new System.Drawing.Point(37, 53);
+            this.cbFK_FabricCode.Name = "cbFK_FabricCode";
+            this.cbFK_FabricCode.Size = new System.Drawing.Size(144, 24);
+            this.cbFK_FabricCode.TabIndex = 10;
             // 
-            // ntbFK_YarnKindCode
+            // ntbFK_FabricCode
             // 
-            this.ntbFK_YarnKindCode.AllowDecimalSeparator = false;
-            this.ntbFK_YarnKindCode.AllowGroupSeparator = false;
-            this.ntbFK_YarnKindCode.AllowNegativeSign = false;
-            this.ntbFK_YarnKindCode.AllowSpace = false;
-            this.ntbFK_YarnKindCode.BackColor = System.Drawing.Color.White;
-            this.ntbFK_YarnKindCode.DecimalLength = 0;
-            this.ntbFK_YarnKindCode.Location = new System.Drawing.Point(183, 53);
-            this.ntbFK_YarnKindCode.Name = "ntbFK_YarnKindCode";
-            this.ntbFK_YarnKindCode.Size = new System.Drawing.Size(50, 23);
-            this.ntbFK_YarnKindCode.TabIndex = 9;
-            this.ntbFK_YarnKindCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ntbFK_YarnKindCode.ValidationChecked = true;
+            this.ntbFK_FabricCode.AllowDecimalSeparator = false;
+            this.ntbFK_FabricCode.AllowGroupSeparator = false;
+            this.ntbFK_FabricCode.AllowNegativeSign = false;
+            this.ntbFK_FabricCode.AllowSpace = false;
+            this.ntbFK_FabricCode.BackColor = System.Drawing.Color.White;
+            this.ntbFK_FabricCode.DecimalLength = 0;
+            this.ntbFK_FabricCode.Location = new System.Drawing.Point(183, 53);
+            this.ntbFK_FabricCode.Name = "ntbFK_FabricCode";
+            this.ntbFK_FabricCode.Size = new System.Drawing.Size(50, 23);
+            this.ntbFK_FabricCode.TabIndex = 9;
+            this.ntbFK_FabricCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ntbFK_FabricCode.ValidationChecked = true;
             // 
-            // lblFK_YarnKindCode
+            // lblFK_FabricCode
             // 
-            this.lblFK_YarnKindCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblFK_YarnKindCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFK_YarnKindCode.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblFK_YarnKindCode.ForeColor = System.Drawing.Color.Black;
-            this.lblFK_YarnKindCode.Location = new System.Drawing.Point(236, 53);
-            this.lblFK_YarnKindCode.Name = "lblFK_YarnKindCode";
-            this.lblFK_YarnKindCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblFK_YarnKindCode.Size = new System.Drawing.Size(130, 23);
-            this.lblFK_YarnKindCode.TabIndex = 8;
-            this.lblFK_YarnKindCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFK_FabricCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblFK_FabricCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFK_FabricCode.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblFK_FabricCode.ForeColor = System.Drawing.Color.Black;
+            this.lblFK_FabricCode.Location = new System.Drawing.Point(236, 53);
+            this.lblFK_FabricCode.Name = "lblFK_FabricCode";
+            this.lblFK_FabricCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblFK_FabricCode.Size = new System.Drawing.Size(130, 23);
+            this.lblFK_FabricCode.TabIndex = 8;
+            this.lblFK_FabricCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ssStatusStrip
             // 
@@ -681,10 +681,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiClose;
         private System.Windows.Forms.ToolTip ttToolTip;
         private System.Windows.Forms.Label lblPK_ProductCode;
-        private System.Windows.Forms.Button btnb_YarnKind;
-        private System.Windows.Forms.ComboBox cbFK_YarnKindCode;
-        internal NumericTextBox ntbFK_YarnKindCode;
-        private System.Windows.Forms.Label lblFK_YarnKindCode;
+        private System.Windows.Forms.Button btnb_Fabric;
+        private System.Windows.Forms.ComboBox cbFK_FabricCode;
+        internal NumericTextBox ntbFK_FabricCode;
+        private System.Windows.Forms.Label lblFK_FabricCode;
         internal System.Windows.Forms.ToolStrip tsToolStrip;
         internal System.Windows.Forms.ToolStripButton tsbDBInsert;
         internal System.Windows.Forms.ToolStripButton tsbDBEdit;
@@ -698,10 +698,10 @@
         internal System.Windows.Forms.ToolStripSeparator tssSeparator5;
         internal System.Windows.Forms.ToolStripButton tsbQuit;
         private System.Windows.Forms.ImageList iImageList;
-        private System.Windows.Forms.Button btnb_YarnType;
-        private System.Windows.Forms.ComboBox cbFK_YarnTypeCode;
-        internal NumericTextBox ntbFK_YarnTypeCode;
-        private System.Windows.Forms.Label lblFK_YarnTypeCode;
+        private System.Windows.Forms.Button btnb_ProductType;
+        private System.Windows.Forms.ComboBox cbFK_ProductTypeCode;
+        internal NumericTextBox ntbFK_ProductTypeCode;
+        private System.Windows.Forms.Label lblFK_ProductTypeCode;
         internal NumericTextBox ntbPK_ProductCode;
         private System.Windows.Forms.DataGridView dgvDataGridView;
         private System.Windows.Forms.TextBox tbProduct;

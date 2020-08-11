@@ -30,7 +30,6 @@ namespace AtsamClient.Main
         {
             InitializeComponent();
         }
-
         private void frmProduct_Load(object sender, EventArgs e)
         {
             __Table = (_Table)this.Tag;
@@ -188,10 +187,10 @@ namespace AtsamClient.Main
                 obj = tbProduct;
                 strMessage = lblProduct.Text + " " + pBFL.GetResourceString("ecIncompelete");
             }
-            if ((ntbFK_YarnKindCode.Text == string.Empty) || (cbFK_YarnKindCode.SelectedIndex == -1))
+            if ((ntbFK_FabricCode.Text == string.Empty) || (cbFK_FabricCode.SelectedIndex == -1))
             {
-                obj = ntbFK_YarnKindCode;
-                strMessage = lblFK_YarnKindCode.Text + " " + pBFL.GetResourceString("ecIncompelete");
+                obj = ntbFK_FabricCode;
+                strMessage = lblFK_FabricCode.Text + " " + pBFL.GetResourceString("ecIncompelete");
             }
             if (obj != null)
             {
@@ -252,10 +251,10 @@ namespace AtsamClient.Main
                                 DataRow drDataRow = dtDataTable.NewRow();
                                 drDataRow["PK_ProductCode"] = ntbPK_ProductCode.Text.Trim();
                                 drDataRow["Product"] = tbProduct.Text.Trim();
-                                drDataRow["FK_YarnTypeCode"] = ntbFK_YarnTypeCode.Text.Trim();
-                                drDataRow["FK_YarnKindCode"] = ntbFK_YarnKindCode.Text.Trim();
-                                drDataRow["YarnType"] = cbFK_YarnTypeCode.Text.Trim();
-                                drDataRow["YarnKind"] = cbFK_YarnKindCode.Text.Trim();
+                                drDataRow["FK_ProductTypeCode"] = ntbFK_ProductTypeCode.Text.Trim();
+                                drDataRow["FK_FabricCode"] = ntbFK_FabricCode.Text.Trim();
+                                drDataRow["ProductType"] = cbFK_ProductTypeCode.Text.Trim();
+                                drDataRow["Fabric"] = cbFK_FabricCode.Text.Trim();
                                 dtDataTable.Rows.Add(drDataRow);
                                 NewRowIndex = dtDataTable.Rows.IndexOf(drDataRow);
                                 break;
@@ -264,11 +263,10 @@ namespace AtsamClient.Main
                             {
                                 dtDataTable.Rows[cmCurrencyManager.Position]["PK_ProductCode"] = ntbPK_ProductCode.Text.Trim();
                                 dtDataTable.Rows[cmCurrencyManager.Position]["Product"] = tbProduct.Text.Trim();
-                                dtDataTable.Rows[cmCurrencyManager.Position]["FK_YarnKindCode"] = ntbFK_YarnKindCode.Text.Trim();
-                                dtDataTable.Rows[cmCurrencyManager.Position]["FK_YarnTypeCode"] = ntbFK_YarnTypeCode.Text.Trim();
-                                dtDataTable.Rows[cmCurrencyManager.Position]["FK_YarnKindCode"] = ntbFK_YarnKindCode.Text.Trim();
-                                dtDataTable.Rows[cmCurrencyManager.Position]["YarnType"] = cbFK_YarnTypeCode.Text.Trim();
-                                dtDataTable.Rows[cmCurrencyManager.Position]["YarnKind"] = cbFK_YarnKindCode.Text.Trim();
+                                dtDataTable.Rows[cmCurrencyManager.Position]["FK_ProductTypeCode"] = ntbFK_ProductTypeCode.Text.Trim();
+                                dtDataTable.Rows[cmCurrencyManager.Position]["FK_FabricCode"] = ntbFK_FabricCode.Text.Trim();
+                                dtDataTable.Rows[cmCurrencyManager.Position]["ProductType"] = cbFK_ProductTypeCode.Text.Trim();
+                                dtDataTable.Rows[cmCurrencyManager.Position]["Fabric"] = cbFK_FabricCode.Text.Trim();
                                 break;
                             }
                     }
@@ -359,9 +357,9 @@ namespace AtsamClient.Main
 
         private void tsbPrintPreview_Click(object sender, EventArgs e)
         {
-            frmReport frm = new frmReport();
+            //frmReport frm = new frmReport();
             //frm.Url = "/MAP_SNC_PTW/Rpt_Product";
-            frm.ShowDialog();
+            //frm.ShowDialog();
         }
 
         private void dgvDataGridView_DataSourceChanged(object sender, EventArgs e)
